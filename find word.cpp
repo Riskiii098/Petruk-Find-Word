@@ -26,6 +26,25 @@ bool searchWord(vector<string> matrix, string word);
         }
     }
 
+    for (int k = 0; k < rows + cols - 1; ++k) {
+        string diagStr = "";
+        for (int i = 0; i < rows; ++i) {
+            int j = k - i;
+            if (j >= 0 && j < cols) {
+                diagStr += matrix[i][j];
+            }
+        }
+        if (diagStr.find(word) != string::npos) {
+            cout << " Ada" << endl;
+            return true;
+        }
+    }
+
+   return false;
+}
+
+
+
 
 int main() {
     int numWords;
