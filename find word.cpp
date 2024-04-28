@@ -6,44 +6,7 @@ using namespace std;
 
 bool searchWord(vector<string> matrix, string word);
 	int rows = matrix.size();
-	int cols = matrix[0].size();
-
-    for (int i = 0; i < rows; ++i) {
-        if (matrix[i].find(word) != string::npos) {
-            cout << " Ada" << endl;
-            return true;
-        }
-    }
-
-    for (int j = 0; j < cols; ++j) {
-        string colStr = "";
-        for (int i = 0; i < rows; ++i) {
-            colStr += matrix[i][j];
-        }
-        if (colStr.find(word) != string::npos) {
-            cout << " Ada" << endl;
-            return true;
-        }
-    }
-
-    for (int k = 0; k < rows + cols - 1; ++k) {
-        string diagStr = "";
-        for (int i = 0; i < rows; ++i) {
-            int j = k - i;
-            if (j >= 0 && j < cols) {
-                diagStr += matrix[i][j];
-            }
-        }
-        if (diagStr.find(word) != string::npos) {
-            cout << " Ada" << endl;
-            return true;
-        }
-    }
-
-   return false;
-}
-
-
+	int cols = matrix[0].size()
 
 
 int main() {
